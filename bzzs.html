@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- 引入 ECharts 文件 -->
+    <link rel="stylesheet" href="./css/bcsj.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.1.2/echarts.min.js"></script>
+</head>
+
+<body>
+    <!-- 创建一个具有指定宽高的 DOM 容器 -->
+    <div id="chart" style="width: 600px; height: 400px;"></div>
+    <div id="clock"></div>
+    <!--echarts-->
+    <script type="text/javascript">
+        // 在页面加载后初始化图表
+        document.addEventListener('DOMContentLoaded', function () {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('chart'));
+
+            // 指定图表的配置项和数据
+            var option = {
+                series: [{
+                    type: 'gauge',
+                    detail: { formatter: '{value}' }, // 显示数值
+                    data: [{ value: 6.5, name: 'PH值' }], // 当前PH值
+                    min: 0, // 最小PH值
+                    max: 14, // 最大PH值
+                    axisLine: {
+                        lineStyle: {
+                            color: [[0.3, '#FF4500'], [0.7, '#FFFF00'], [1, '#228B22']], // 颜色分段
+                            width: 8
+                        }
+                    },
+                    splitLine: {
+                        length: 12,
+                        lineStyle: {
+                            color: 'auto'
+                        }
+                    }
+                }]
+            };
+
+
+            // 使用刚指定的配置项和数据显示图表
+            myChart.setOption(option);
+        });
+    </script>
+    <!--数字时钟-->
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours().toString().padStart(2, '0');
+            var minutes = now.getMinutes().toString().padStart(2, '0');
+            var seconds = now.getSeconds().toString().padStart(2, '0');
+
+            var timeString = hours + ':' + minutes + ':' + seconds;
+
+            var clockElement = document.getElementById('clock');
+            clockElement.textContent = timeString;
+        }
+
+        // 更新时钟并每秒钟调用一次
+        setInterval(updateClock, 1000);
+
+        // 初始化一次以避免初始延迟
+        updateClock();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/user.css">
+    <script src="./js/user.js"></script>
+</head>
+<body>
+    <div id="box">
+        <h1>用户信息</h1>
+        个性化背景:   <input type="range" name=""id="range">
+        <div class="info">
+            <div class="disc">昵称</div>
+            <input type="text" class="text">
+            <input type="button" value="修改" class="config" id="config1">
+            <input type="button" value="暂存" class="config" id="save1">
+        </div>
+        <div class="info">
+            <div class="disc">用户名</div>
+            <input type="text" class="text">
+            <input type="button" value="用户名不可修改" class="config" id="userbtn">
+        </div>
+        <div class="info">
+            <div class="disc">艺元豆</div>
+            <input type="text" class="text">
+            <input type="button" value="+" class="config" id="config2">
+            <input type="button" value="-" class="config" id="save2">
+        </div>
+        <div class="info" id="sex">
+            <span>性别:</span>
+            <input type="radio" name="sex" id="sex1" class="sexradio">男
+            <input type="radio" name="sex" id="sex2" class="sexradio">女
+            <input type="radio" name="sex" id="sex3" class="sexradio">未知
+        </div>
+        <div class="info">
+            <div class="disc">个性签名</div>
+            <input type="text" class="text">
+            <input type="button" value="修改" class="config" id="config3">
+            <input type="button" value="暂存" class="config" id="save3">
+        </div>
+        <div class="info">
+            <input type="button" value="提交信息" class="config" id="submit">
+            <input type="button" value="取消操作" class="config" id="cancel">
+        </div>
+    </div>
+    <!--弹窗:用户名不可修改-->
+    <div id="tanchuang">
+        <div id="tclose">
+            <div id="string1"></div>
+            <div id="string2"></div>
+        </div>
+        <h1 id="tmessage">用户名不可被修改</h1>
+        <button id="tbtn">确定</button>
+    </div>
+</body>
+</html>

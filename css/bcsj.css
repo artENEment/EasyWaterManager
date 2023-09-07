@@ -1,0 +1,28 @@
+*{
+    /* background-image: url('../img/1.png'); */
+    z-index: 1;
+}
+body{
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+#box{
+    width:55vw;
+    height: 40vh;
+    background-color: white;
+    border: solid black 3vh;
+    border-radius: 3vh;
+    z-index: 2;
+}
+#chart{
+
+}
+#clock {
+    font-size: 48px;
+    font-family: Arial, sans-serif;
+}

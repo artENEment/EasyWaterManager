@@ -1,0 +1,11 @@
+body{
+    animation: shadowin 1s linear 0s;
+}
+@keyframes shadowin{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

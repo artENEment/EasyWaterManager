@@ -1,0 +1,160 @@
+*{
+    margin:0px;
+    padding: 0px;
+}
+body{
+    width:100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(45deg,#098375,#4499);
+}
+#box{
+    width:80%;
+    height: 70%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-style: oblique;
+    color: aliceblue;
+    margin-top: 10%;
+}
+h1{
+    width: 60%;
+    height: 10%;
+    font-size: 50px;
+    margin-bottom:3%;
+}
+.text{
+    margin:1.5vh;
+    cursor: pointer;
+    box-sizing: border-box;
+    width:20vw;
+    height:4vh;
+    font-size:3vh;
+    box-sizing: border-box;
+    padding: 0px;
+    border:solid 2px #098375;
+}
+#range{
+    width:50%;
+}
+.info{
+    margin-top:4%;
+    width:100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.info>span{
+    font-size: 30px;
+    transform: translateX(-1vh);
+}
+#sex{
+    font-size: 30px;
+    color:crimson;
+    font-weight:bolder;
+}
+#sex1,#sex2,#sex3{
+    width: 2vw;
+    height:3vh;
+    cursor: pointer;
+}
+.disc{
+    /* transform: translateX(-36vw); */
+    width:5vw;
+    height:4vh;
+    text-align: center;
+    line-height: 4vh;
+}
+.config{
+    cursor: pointer;
+    box-sizing: border-box;
+    width:5vw;
+    height:4vh;
+    padding: 0px;
+    margin-left: 1vw;
+}
+#submit,#cancel{
+    color:aliceblue;
+    font-weight: 1000;
+    width:10vw;
+    height: 6vh;
+    font-size: larger;
+    border:none;
+    border-radius: 2vh;
+}
+#submit{
+    background-color:green;
+}
+#cancel{
+    background-color: red;
+}
+#userbtn{
+    width:11vw;
+    color:white;
+    background-color: red;
+    border: none;
+    font-weight: bolder;
+}
+#tanchuang{
+    width:55vw;
+    height: 70vh;
+    background-color: whitesmoke;
+    z-index:2;
+    transform: translateY(-80vh);
+    border-radius: 10vh 1vh 10vh 10vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 90%;
+    display: none;
+    position: relative;
+    transition: display 1s ease-in-out;
+}
+#tmessage{
+    color:red;
+    text-align: center;
+}
+#tanchuang>button{
+    margin-top: 10vh;
+    background-image: linear-gradient(45deg,#1eff78,#ffff00);
+    width:20%;
+    height: 10%;
+    border: none;
+    border-radius: 2vh;
+}
+#tclose{
+    width:8vh;
+    height: 8vh;
+    background-color: red;
+    position: absolute;
+    top:0%;
+    right: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vh;
+    cursor: pointer;
+}
+#string1,#string2{
+    width: 6.5vh;
+    height: 0.5vh;
+    background-color: aliceblue;
+}
+#string1{
+    transform: translateY(0.25vh) rotateZ(45deg);
+}
+#string2{
+    transform: translateY(-0.25vh) rotateZ(-45deg);
+}
+#tbtn{
+    cursor: pointer;
+}

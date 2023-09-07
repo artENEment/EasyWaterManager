@@ -1,0 +1,116 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bcsj.css">
+</head>
+<body>
+    <div id="box">
+    </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- 引入 ECharts 文件 -->
+    <link rel="stylesheet" href="./css/bcsj.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.1.2/echarts.min.js"></script>
+</head>
+
+<body>
+    <!-- 创建一个具有指定宽高的 DOM 容器 -->
+    <div id="chart" style="width: 600px; height: 400px;"></div>
+    <div id="clock"></div>
+    <!--echarts-->
+    <script type="text/javascript">
+        // 在页面加载后初始化图表
+        document.addEventListener('DOMContentLoaded', function () {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('chart'));
+
+            // 指定图表的配置项和数据
+            // var option = {
+            //     grid: {
+            //         left: '10%',
+            //         right: '10%',
+            //         // 其他配置...
+            //     },
+            //     title: {
+            //         text: '水位监测',
+            //         textStyle: {
+            //             textAlign: 'center' // 将标题居中
+            //         }
+            //     },
+            //     tooltip: {},
+            //     xAxis: {
+            //         data: ['2023/9/3', '2023/9/4', '2023/9/5', '2023/9/6', '当前']
+            //     },
+            //     yAxis: {},
+            //     series: [{
+            //         name: '水位高',
+            //         type: 'bar',
+            //         data: [80, 47, 56, 61, 70]
+            //     }]
+            // };
+            var option = {
+                title: {
+                    text: '水位监测',
+                    subtext: '单位：米', // 添加基本信息
+                    left: 'center' // 标题居中显示
+                },
+                legend: {
+                    data: ['水位'], // 图例名称
+                    right: 10, // 图例位置
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['2023/9/2','2023/9/3', '2023/9/4', '2023/9/5', '2023/9/6', '当前']
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLabel: {
+                        formatter: '{value} m'
+                    }
+                },
+                series: [{
+                    name: '水位', // 对应图例
+                    data: [2.5, 3.0, 2.8, 3.2, 2.7, 3.5], // 水位数据
+                    type: 'bar',
+                    itemStyle: {
+                        color: '#6EB6FF' // 柱状图颜色
+                    }
+                }]
+            };
+
+            // 使用刚指定的配置项和数据显示图表
+            myChart.setOption(option);
+        });
+    </script>
+    <!--数字时钟-->
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours().toString().padStart(2, '0');
+            var minutes = now.getMinutes().toString().padStart(2, '0');
+            var seconds = now.getSeconds().toString().padStart(2, '0');
+
+            var timeString = hours + ':' + minutes + ':' + seconds;
+
+            var clockElement = document.getElementById('clock');
+            clockElement.textContent = timeString;
+        }
+
+        // 更新时钟并每秒钟调用一次
+        setInterval(updateClock, 1000);
+
+        // 初始化一次以避免初始延迟
+        updateClock();
+    </script>
+</body>
+
+</html>

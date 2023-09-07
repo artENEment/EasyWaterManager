@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- 引入 ECharts 文件 -->
+    <link rel="stylesheet" href="./css/bcsj.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.1.2/echarts.min.js"></script>
+</head>
+
+<body>
+    <!-- 创建一个具有指定宽高的 DOM 容器 -->
+    <div id="chart" style="width: 600px; height: 400px;"></div>
+    <div id="clock"></div>
+    <!--echarts-->
+    <script type="text/javascript">
+        // 在页面加载后初始化图表
+        document.addEventListener('DOMContentLoaded', function () {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('chart'));
+
+            // 指定图表的配置项和数据
+            var option = {
+                title: {
+                    text: '溶解氧浓度变化',
+                    subtext: '单位：mg/L', // 添加基本信息
+                    left: 'center' // 标题居中显示
+                },
+                legend: {
+                    data: ['溶解氧浓度'], // 图例名称
+                    right: 10, // 图例位置
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['2023/9/2','2023/9/3', '2023/9/4', '2023/9/5', '2023/9/6', '当前']
+                },
+                yAxis: {
+                    type: 'value',
+                    min: 0,
+                    max: 14,
+                    axisLabel: {
+                        formatter: '{value} mg/L'
+                    }
+                },
+                series: [{
+                    name: '溶解氧浓度', // 对应图例
+                    data: [8, 7.5, 8.2, 7.8, 7.2, 8.5],
+                    type: 'line',
+                    smooth: true,
+                    areaStyle: {}
+                }]
+            };
+
+
+
+            // 使用刚指定的配置项和数据显示图表
+            myChart.setOption(option);
+        });
+    </script>
+    <!--数字时钟-->
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours().toString().padStart(2, '0');
+            var minutes = now.getMinutes().toString().padStart(2, '0');
+            var seconds = now.getSeconds().toString().padStart(2, '0');
+
+            var timeString = hours + ':' + minutes + ':' + seconds;
+
+            var clockElement = document.getElementById('clock');
+            clockElement.textContent = timeString;
+        }
+
+        // 更新时钟并每秒钟调用一次
+        setInterval(updateClock, 1000);
+
+        // 初始化一次以避免初始延迟
+        updateClock();
+    </script>
+</body>
+
+</html>
